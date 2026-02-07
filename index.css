@@ -1,0 +1,77 @@
+.icon-group {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  display: flex;
+  gap: 2rem;
+  z-index: 3;
+}
+/* =========================
+   Hero section
+========================= */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Hero Video + Overlay (shared) */
+.hero-video,
+.hero-overlay {
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 8rem);
+}
+
+/* Hero Video */
+.hero-video {
+  object-position: center top;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Hero Overlay */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Hero Page Content */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  transform: translateY(20px);
+}
+
+/* =========================
+   Jacobi Logo
+========================= */
+.logo {
+  position: static;
+  width: 20rem;
+  height: auto;
+  z-index: 3;
+  margin-bottom: 1rem;
+  margin-top: -7rem;
+}
+
+/* =========================
+   Hero Text
+========================= */
+.hero-h1,
+.hero-p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
