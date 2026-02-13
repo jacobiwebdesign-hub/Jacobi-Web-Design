@@ -1,0 +1,352 @@
+<!-- jwdLandingPage.html (ONLY changes: header + footer neon SVG viewBox + path to match clipPaths) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jacobi Web Design landing page</title>
+    <link rel="stylesheet" href="/base.css" />
+    <link rel="stylesheet" href="/landing/landing.css" />
+  </head>
+
+  <body>
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <clipPath id="curve-diagonal" clipPathUnits="objectBoundingBox">
+          <path
+            d="
+              M 0 0
+              H 1
+              V 0.42
+              C 0.92 0.46, 0.72 0.60, 0.58 0.78
+              C 0.44 0.94, 0.22 0.99, 0 1
+              V 0
+              Z
+            "
+          />
+        </clipPath>
+
+        <clipPath id="curve-diagonal-footer" clipPathUnits="objectBoundingBox">
+          <path
+            d="
+              M 1 1
+              H 0
+              V 0.58
+              C 0.08 0.54, 0.28 0.40, 0.42 0.22
+              C 0.56 0.06, 0.78 0.01, 1 0
+              V 1
+              Z
+            "
+          />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <video
+      class="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/image/bg-poster.jpg"
+    >
+      <source src="/video/jwdbgvid.webm" type="video/webm" />
+      <source src="/video/jwdbgvid.mp4" type="video/mp4" />
+    </video>
+    <div class="bg-overlay"></div>
+
+    <div class="landing-wrap">
+      <div class="landing-heading">
+        <!-- Top Bar -->
+        <div class="header-top site-bar">
+          <nav class="header-left-buttons" aria-label="Primary">
+            <a href="#home" class="top-btn">Projects</a>
+            <a href="#pricing" class="top-btn">Pricing</a>
+            <a href="#contact" class="top-btn">Contact</a>
+          </nav>
+
+          <img
+            src="/image/Jacobiwebdesignlogo.png"
+            alt="Jacobi Web Design Logo"
+            class="logo"
+          />
+
+          <div class="icon-group">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=jacobiwebdesign038@gmail.com&su=Website%20Inquiry"
+              class="email-btn icon-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="/image/gmail icon.png" alt="Email" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/jacobien-cole-7958173aa"
+              class="linkedin-btn icon-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="/image/LinkedIn vector icon.png" alt="LinkedIn" />
+            </a>
+
+            <a href="tel:15135493677" class="Phone-btn icon-btn">
+              <img src="/image/call icon.png" alt="Phone" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Curved Header Body -->
+        <div class="landing-hero">
+          <div class="hero-media" aria-hidden="true">
+            <video autoplay muted loop playsinline preload="metadata" poster="image/hero-poster.jpg">
+              <source src="/video/jwdbdvid.webm" type="video/webm" />
+              <source src="/video/jwdbdvid.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="hero-copy">
+            <h1 class="h1-2">Custom Built Websites.</h1>
+            <p class="p2">
+              Jacobi Web Design builds clean, modern websites that load fast, look sharp, and guide visitors toward action —
+              no templates, no bloat.
+            </p>
+            <a href="#contact" class="cta-btn button-text">Schedule an Appointment</a>
+          </div>
+        </div>
+
+        <!-- Neon curve stroke (CHANGED: viewBox + path now matches #curve-diagonal) -->
+        <svg class="neon-border" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+          <path
+            d="
+              M 1 0.42
+              C 0.92 0.46, 0.72 0.60, 0.58 0.78
+              C 0.44 0.94, 0.22 0.99, 0 1
+            "
+          />
+        </svg>
+
+
+      </div>
+
+      <div class="page-content">
+        <section class="care-section">
+          <div class="care-header">
+            <h1 class="care-title">Website Hosting & Maintenance.</h1>
+            <p class="care-subtitle">
+              Keep your site fast, secure, and updated — without worrying about the technical stuff.
+            </p>
+          </div>
+
+          <div class="care-block neon-cyan neon-inset neon-round">
+            <div class="care-left">
+              <h2 class="care-heading">Monthly Hosting + Care Plan</h2>
+              <p class="care-text">
+                Reliable hosting, performance monitoring, and small updates — so your website stays stable after launch.
+              </p>
+
+              <div class="care-metrics">
+                <div class="metric">
+                  <div class="metric-label">Uptime Monitoring</div>
+                  <div class="metric-value">24/7</div>
+                </div>
+
+                <div class="metric">
+                  <div class="metric-label">Support</div>
+                  <div class="metric-value">Ongoing</div>
+                </div>
+
+                <div class="metric">
+                  <div class="metric-label">Updates</div>
+                  <div class="metric-value">Included</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="care-right">
+              <h2 class="care-includes-title">What’s Included</h2>
+
+              <ul class="care-list">
+                <li>Secure, reliable hosting</li>
+                <li>Performance + uptime monitoring</li>
+                <li>Basic security checks</li>
+                <li>Minor content updates (text/images)</li>
+                <li>Monthly site health review</li>
+              </ul>
+
+              <div class="care-footer">
+                <div class="care-price">
+                  <span class="care-price-amount">$19.99</span>
+                  <span class="care-price-note">/month</span>
+                </div>
+
+                <a href="#contact" class="cta-btn price-button-text">Start Care Plan</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="content-container3">
+          <section class="services-section">
+            <div class="services-header">
+              <h1 class="services-title">Web Design Services.</h1>
+              <p class="services-subtitle">
+                Choose a package that fits your launch stage — all custom-built, fast, and focused on conversions.
+              </p>
+            </div>
+
+            <div class="services-grid">
+              <article class="service-card">
+                <div class="service-top">
+                  <h2 class="service-name">Splash + Landing Page</h2>
+                  <p class="service-desc">
+                    A strong first impression with a splash page + a conversion-focused landing page built to guide visitors to action.
+                  </p>
+
+                  <ul class="service-list">
+                    <li>Custom layout + styling</li>
+                    <li>Mobile responsive</li>
+                    <li>Basic SEO + performance pass</li>
+                  </ul>
+                </div>
+
+                <div class="service-bottom">
+                  <div class="service-price">
+                    <span class="price-amount">$149</span>
+                    <span class="price-note">starting</span>
+                  </div>
+                  <a href="#contact" class="cta-btn price-button-text">Get Started</a>
+                </div>
+              </article>
+
+              <article class="service-card featured">
+                <div class="service-badge">Most Popular</div>
+
+                <div class="service-top">
+                  <h2 class="service-name">Multi-Page Website</h2>
+                  <p class="service-desc">
+                    A complete 5-page website (splash + home + 3 pages) built for credibility, structure, and growth.
+                  </p>
+
+                  <ul class="service-list">
+                    <li>5 pages total</li>
+                    <li>Navigation + section structure</li>
+                    <li>Performance + SEO setup</li>
+                  </ul>
+                </div>
+
+                <div class="service-bottom">
+                  <div class="service-price">
+                    <span class="price-amount">$299</span>
+                    <span class="price-note">starting</span>
+                  </div>
+                  <a href="#contact" class="cta-btn price-button-text">Get Started</a>
+                </div>
+              </article>
+
+              <article class="service-card">
+                <div class="service-top">
+                  <h2 class="service-name">Monthly Hosting + Care</h2>
+                  <p class="service-desc">
+                    Hosting, updates, monitoring, and small edits — so your site stays smooth, secure, and up to date.
+                  </p>
+
+                  <ul class="service-list">
+                    <li>Performance monitoring</li>
+                    <li>Minor content updates</li>
+                    <li>Security + uptime checks</li>
+                  </ul>
+                </div>
+
+                <div class="service-bottom">
+                  <div class="service-price">
+                    <span class="price-amount">$19.99</span>
+                    <span class="price-note">/month</span>
+                  </div>
+                  <a href="#contact" class="cta-btn price-button-text">Get Started</a>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-wrap" id="contact">
+      <div class="footer-heading">
+        <div class="footer-inner">
+          <!-- Left: Brand -->
+          <div class="footer-col footer-brand">
+            <img src="/image/Jacobiwebdesignlogo.png" class="footer-logo" alt="Jacobi Web Design logo" />
+            <p class="footer-tagline">
+              Clean, modern websites built to load fast and convert visitors into customers.
+            </p>
+          </div>
+
+          <!-- Middle: Quick Links -->
+          <nav class="footer-col footer-links" aria-label="Footer">
+            <h3 class="footer-title">Quick Links</h3>
+            <a href="#home" class="footer-link">Home</a>
+            <a href="#pricing" class="footer-link">Pricing</a>
+            <a href="#contact" class="footer-link">Contact</a>
+          </nav>
+
+          <!-- Right: Contact -->
+          <div class="footer-col footer-contact">
+            <h3 class="footer-title">Contact</h3>
+            <a class="footer-link" href="mailto:jacobiwebdesign038@gmail.com">jacobiwebdesign038@gmail.com</a>
+            <a class="footer-link" href="tel:15135493677">(513) 549-3677</a>
+
+            <div class="footer-icons icon-group">
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=jacobiwebdesign038@gmail.com&su=Website%20Inquiry"
+                class="icon-btn"
+                target="_blank"
+                rel="noopener"
+                aria-label="Email"
+              >
+                <img src="/image/gmail icon.png" alt="Email" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/jacobien-cole-7958173aa"
+                class="icon-btn"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <img src="/image/LinkedIn vector icon.png" alt="LinkedIn" />
+              </a>
+
+              <a href="tel:15135493677" class="icon-btn" aria-label="Phone">
+                <img src="/image/call icon.png" alt="Phone" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom strip -->
+        <div class="footer-bottom-row">
+          <span class="copyright">© <span id="year" class="copyright"></span> Jacobi Web Design. All rights reserved.</span>
+          <span class="footer-mini">Custom-built • Fast • No templates</span>
+        </div>
+
+        <!-- Neon curve stroke (CHANGED: viewBox + path now matches #curve-diagonal-footer) -->
+       <svg class="footer-neon-border" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true">
+        <path
+          d="
+            M 0 0.58
+            C 0.08 0.54, 0.28 0.40, 0.42 0.22
+            C 0.56 0.06, 0.78 0.01, 1 0
+          "
+        />
+      </svg>
+
+      </div>
+
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>

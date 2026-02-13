@@ -1,55 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Jacobi Web Design hero page</title>
-        <link rel="stylesheet" href="base.css">
-        <link rel="stylesheet" href="index.css">
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jacobi Web Design</title>
 
-    <body>
-        <header class="hero">
-            
-            <video class="hero-video" autoplay muted loop playsinline preload="auto">
-                <source src="video/jwdbgvid.webm" type="video/webm" />
-                <source src="video/jwdbgvid.mp4" type="video/mp4">
-            </video>
+    <!-- Keep base if you want shared styles -->
+    <link rel="stylesheet" href="/base.css" />
+    <link rel="stylesheet" href="/index.css" />
+  </head>
 
+  <body>
+    <!-- Background video -->
+    <video
+      class="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="/image/bg-poster.jpg"
+    >
+      <source src="/video/jwdbgvid.webm" type="video/webm" />
+      <source src="/video/jwdbgvid.mp4" type="video/mp4" />
+    </video>
+    <div class="bg-overlay" aria-hidden="true"></div>
 
-            <div class="hero-overlay"></div>
+    <!-- Top-right icons -->
+    <div class="splash-icons">
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=jacobiwebdesign038@gmail.com&su=Website%20Inquiry"
+        class="icon-btn"
+        target="_blank"
+        rel="noopener"
+        aria-label="Email"
+      >
+        <img src="/image/gmail icon.png" alt="Email" />
+      </a>
 
-            
-                
+      <a
+        href="https://www.linkedin.com/in/jacobien-cole-7958173aa"
+        class="icon-btn"
+        target="_blank"
+        rel="noopener"
+        aria-label="LinkedIn"
+      >
+        <img src="/image/LinkedIn vector icon.png" alt="LinkedIn" />
+      </a>
 
-                 
-            <div class="icon-group">
-               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jacobiwebdesign038@gmail.com&su=Website%20Inquiry"
-                        class="email-btn icon-btn"
-                        target="_blank" rel="noopener">
-                    <img src="image/gmail icon.png" alt="Email">
-                </a>
+      <a href="tel:15135493677" class="icon-btn" aria-label="Phone">
+        <img src="/image/call icon.png" alt="Phone" />
+      </a>
+    </div>
 
-                <a href="https://www.linkedin.com/in/jacobien-cole-7958173aa" class="linkedin-btn icon-btn">
-                    <img src="image/LinkedIn vector icon.png" alt="LinkedIn icon">
-                </a>
+    <!-- Main splash content -->
+    <main class="splash">
+      <div class="splash-inner">
+        <img
+          src="/image/Jacobiwebdesignlogo.png"
+          alt="Jacobi Web Design"
+          class="splash-logo"
+        />
 
-                <a href="tel:15135493677" class="Phone-btn icon-btn">
-                    <img src="image/call icon.png" alt="phone icon">
-                </a>
-            </div>
+        <h1 class="splash-title">PROFESSIONAL WEB DESIGN</h1>
+        <p class="splash-subtitle">
+          Custom websites built for speed, clarity, and real results.
+        </p>
 
-
-           <div class="hero-content">
-                    <img src="image/Jacobiwebdesignlogo.png" 
-                        alt="Jacobi Web Design Logo" 
-                        class="logo">
-                    <h1 class="hero-h1">Professional web design </h1>
-                    <p class="hero-p">We provide custom built websites at an afordable price.</p>
-                    <a href="jwdLandingPage.html" class="cta-btn button-text">Click to Learn More!</a>
-           </div> 
-
-                 
-        </header>
-
-    </body>
+        <!-- Go to your landing page -->
+        <a class="splash-cta" href="/landing/landing.html">CLICK TO LEARN MORE!</a>
+      </div>
+    </main>
+  </body>
 </html>

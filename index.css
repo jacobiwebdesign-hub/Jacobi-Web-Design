@@ -1,77 +1,130 @@
-.icon-group {
-  position: absolute;
+/* ===== Splash Page Only ===== */
+
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  background: #000;
+  overflow: hidden; /* splash should not scroll */
+}
+
+/* Background video */
+.bg-video,
+.bg-overlay{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bg-video{
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+}
+
+.bg-overlay{
+  background: rgba(0,0,0,0.55);
+  z-index: -1;
+}
+
+/* Top-right icons */
+.splash-icons{
+  position: fixed;
   top: 1.5rem;
   right: 2rem;
   display: flex;
-  gap: 2rem;
-  z-index: 3;
-}
-/* =========================
-   Hero section
-========================= */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  gap: 1.25rem;
+  z-index: 10;
 }
 
-/* Hero Video + Overlay (shared) */
-.hero-video,
-.hero-overlay {
-  position: absolute;
-  top: 8rem;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 8rem);
+.splash-icons .icon-btn img{
+  width: 44px;
+  height: 44px;
+  display: block;
 }
 
-/* Hero Video */
-.hero-video {
-  object-position: center top;
-  object-fit: cover;
-  z-index: 0;
+/* Center content */
+.splash{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 4rem 1.5rem;
 }
 
-/* Hero Overlay */
-.hero-overlay {
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 1;
-}
-
-/* Hero Page Content */
-.hero-content {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.splash-inner{
   text-align: center;
-  padding: 0 1.5rem;
-  transform: translateY(20px);
+  max-width: 1100px;
 }
 
-/* =========================
-   Jacobi Logo
-========================= */
-.logo {
-  position: static;
-  width: 20rem;
+.splash-logo{
+  width: min(520px, 85vw);
   height: auto;
-  z-index: 3;
-  margin-bottom: 1rem;
-  margin-top: -7rem;
+  display: block;
+  margin: 0 auto 2.25rem;
 }
 
-/* =========================
-   Hero Text
-========================= */
-.hero-h1,
-.hero-p {
-  position: relative;
-  z-index: 2;
-  margin: 0;
+/* Headline */
+.splash-title{
+  margin: 0 0 1rem;
+  font-family: "orbitron", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  font-size: clamp(2rem, 4.3vw, 4.2rem);
+  color: rgba(233,255,255,1);
+  text-shadow:
+    0 0 10px rgba(125,249,255,0.55),
+    0 0 30px rgba(0,229,255,0.25);
 }
 
+.splash-subtitle{
+  margin: 0 0 2rem;
+  font-family: "roboto", sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  letter-spacing: 0.06em;
+  color: rgba(41, 204, 175, 0.95);
+}
+
+/* CTA */
+.splash-cta{
+  display: inline-block;
+  padding: 0.85rem 2.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+
+  font-family: "orbitron", sans-serif;
+  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+  color: rgba(233,255,255,1);
+
+  border: 2px solid rgba(185, 35, 255, 0.85);
+  box-shadow:
+    0 0 10px rgba(185,35,255,0.25),
+    0 0 22px rgba(185,35,255,0.14);
+  background: rgba(0,0,0,0.35);
+
+  transition: transform 0.2s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.splash-cta:hover{
+  transform: translateY(-2px);
+  color: rgba(233,255,255,1);
+  background: rgba(185, 35, 255, 0.85);
+  box-shadow:
+    0 0 14px rgba(185,35,255,0.35),
+    0 0 36px rgba(185,35,255,0.22);
+}
+
+/* Small screens */
+@media (max-width: 600px){
+  .splash-icons{
+    right: 1rem;
+    top: 1rem;
+  }
+  .splash-icons .icon-btn img{
+    width: 40px;
+    height: 40px;
+  }
+}
