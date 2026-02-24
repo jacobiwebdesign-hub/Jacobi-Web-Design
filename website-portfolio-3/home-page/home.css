@@ -98,8 +98,11 @@
 }
 
 .hero-console-img {
+  display: block;
+  width: 100%;
   max-width: 900px;
   margin: 2rem auto;
+  height: auto;
 }
 
 .specs {
@@ -222,7 +225,8 @@
 
   .hero-console-img {
     margin: 1.5rem auto;
-    width: min(82vw, 520px);
+    width: min(78vw, 460px);
+    max-width: 100%;
   }
 
   .specs {
@@ -288,7 +292,8 @@
     padding-top: 1.2rem;
   }
   .hero-console-img {
-    width: min(66vw, 430px);
+    width: min(62vw, 380px);
+    max-width: 100%;
   }
   .specs {
     gap: 0.5rem 0.85rem;
@@ -311,6 +316,12 @@
 
   .hero-console .center-text {
     padding: 0.3rem 0 3rem;
+  }
+
+  .hero-console-img {
+    width: min(86vw, 290px);
+    max-width: 100%;
+    margin: 1.1rem auto;
   }
 
   .product-card {
