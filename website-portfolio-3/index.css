@@ -198,9 +198,9 @@
     gap: 0.5rem;
   }
 
-  .console { width: min(78vw, 380px); }
-  .controller { width: min(24vw, 120px); transform: translateY(10px); }
-  .headset { width: min(28vw, 140px); transform: translateY(5px); }
+  .console { width: min(70vw, 330px); }
+  .controller { width: min(21vw, 98px); transform: translateY(8px); }
+  .headset { width: min(24vw, 112px); transform: translateY(4px); }
 
 }
 
@@ -234,12 +234,12 @@
     gap: 0.35rem;
   }
   .console {
-    width: min(76vw, 300px);
+    width: min(68vw, 250px);
   }
   .controller {
-    width: min(23vw, 95px);
+    width: min(19vw, 72px);
   }
   .headset {
-    width: min(26vw, 105px);
+    width: min(22vw, 84px);
   }
 }

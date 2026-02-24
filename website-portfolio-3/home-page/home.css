@@ -222,7 +222,7 @@
 
   .hero-console-img {
     margin: 1.5rem auto;
-    width: min(90vw, 620px);
+    width: min(82vw, 520px);
   }
 
   .specs {
@@ -237,12 +237,12 @@
 
   .product-card img {
     position: static;
-    max-width: min(220px, 70%);
+    max-width: min(180px, 56%);
     margin: 1rem auto 0;
   }
 
   .game-card img {
-    height: 190px;
+    height: 170px;
   }
 
   .headset-promo {
@@ -251,6 +251,10 @@
 
   .feature-box {
     padding: 1.25rem;
+  }
+
+  .headset-img {
+    max-width: min(82vw, 420px);
   }
 
   .site-footer {
@@ -272,7 +276,7 @@
   }
 
   .game-card img {
-    height: 170px;
+    height: 150px;
   }
 }
 
@@ -284,11 +288,15 @@
     padding-top: 1.2rem;
   }
   .hero-console-img {
-    width: min(76vw, 520px);
+    width: min(66vw, 430px);
   }
   .specs {
     gap: 0.5rem 0.85rem;
     font-size: 0.92rem;
+  }
+
+  .headset-img {
+    max-width: min(56vw, 320px);
   }
 }
 
@@ -309,7 +317,15 @@
     padding: 1.05rem 0.9rem 1rem;
   }
 
+  .product-card img {
+    max-width: min(145px, 52%);
+  }
+
   .game-card img {
-    height: 150px;
+    height: 136px;
+  }
+
+  .headset-img {
+    max-width: min(72vw, 250px);
   }
 }
