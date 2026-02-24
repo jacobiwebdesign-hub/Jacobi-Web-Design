@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after{ box-sizing:border-box; }
+
+html,body{ height:100%; }
+
+html{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--color-bg);
+  color:var(--color-text);
+}
+
+img{ max-width:100%; display:block; }
+
+a{ color:inherit; }
+
+.container{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 var(--space-3);
+}
+
+.section{
+  padding:var(--space-7) 0;
+}
+
+/* Typography System */
+h1,h2,h3{
+  margin:0 0 var(--space-2) 0;
+  letter-spacing:-0.025em;
+}
+
+h1{
+  font-size:clamp(40px, 5vw, 64px);
+  line-height:1.05;
+  font-weight:700;
+}
+
+h2{
+  font-size:clamp(28px, 3.2vw, 40px);
+  line-height:1.15;
+  font-weight:650;
+}
+
+h3{
+  font-size:clamp(20px, 2vw, 22px);
+  line-height:1.25;
+  font-weight:600;
+}
+
+p{
+  margin:0 0 var(--space-4) 0;
+  font-size:16px;
+  line-height:1.7;
+  color:var(--color-text-2);
+  max-width:65ch;
+}
+
+/* Optional "eyebrow" label above headings */
+.eyebrow{
+  font-size:13px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--color-text-3);
+  margin:0 0 var(--space-2) 0;
+}

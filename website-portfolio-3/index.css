@@ -1,0 +1,153 @@
+/* ================================
+   HEADER
+================================ */
+
+.site-header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding: clamp(0.75rem, 2vh, 1.25rem) 0;
+  z-index: 10;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.nav-icons {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.icon-link img {
+  width: 22px;
+  height: 22px;
+  filter: none;
+  display: block;
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  padding-top: clamp(76px, 11vh, 110px);
+  overflow: hidden;
+  background: radial-gradient(
+      circle at center,
+      rgba(70, 70, 70, 0.4),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("../assets/images/hero-background-texture.webp") center/cover no-repeat;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.brand-tag {
+  letter-spacing: 3px;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, var(--font-size-xxl));
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  margin-bottom: clamp(0.75rem, 2vh, 1.5rem);
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+/* ================================
+   PRODUCT LAYER
+================================ */
+
+.hero-products {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(8px, 2vh, 20px);
+  transform: translateX(-50%);
+  width: min(1200px, 90%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(0.75rem, 2vw, 1.75rem);
+}
+
+.product {
+  max-width: 100%;
+  height: auto;
+}
+
+.console {
+  width: clamp(340px, 48vw, 560px);
+  z-index: 2;
+}
+
+.controller {
+  width: clamp(150px, 20vw, 230px);
+  transform: translateY(24px);
+}
+
+.headset {
+  width: clamp(180px, 24vw, 280px);
+  transform: translateY(12px);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+  .hero-products { gap: 0.75rem; }
+  .console { width: clamp(300px, 60vw, 500px); }
+  .controller { width: clamp(130px, 20vw, 190px); transform: translateY(16px); }
+  .headset { width: clamp(150px, 24vw, 220px); transform: translateY(8px); }
+}
+
+@media (max-width: 600px) {
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-products {
+    bottom: 6px;
+    width: 94%;
+    gap: 0.5rem;
+  }
+
+  .console { width: min(78vw, 380px); }
+  .controller { width: min(24vw, 120px); transform: translateY(10px); }
+  .headset { width: min(28vw, 140px); transform: translateY(5px); }
+
+}

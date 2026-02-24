@@ -1,0 +1,126 @@
+.pricing-hero{
+  position:relative;
+}
+.pricing-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:var(--grad-1), var(--grad-2);
+  opacity:.95;
+}
+
+.hero-actions{
+  display:flex;
+  gap:var(--s3);
+  flex-wrap:wrap;
+  margin-top:var(--s4);
+}
+
+.pricing-head{
+  max-width:760px;
+  margin-bottom:var(--s6);
+}
+
+.muted{
+  color:var(--text-2);
+  font-size:16px;
+  line-height:26px;
+}
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:var(--s4);
+}
+
+.features{
+  margin:0 0 var(--s5) 0;
+  padding-left:18px;
+  display:flex;
+  flex-direction:column;
+  gap:var(--s2);
+  color:var(--text-2);
+  font-size:15px;
+  line-height:24px;
+}
+
+.plan{
+  position:relative;
+  min-height:520px;
+  display:flex;
+  flex-direction:column;
+}
+
+.plan-bottom{
+  margin-top:auto;
+  width:100%;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:end;
+  gap:var(--s3);
+}
+
+.plan-bottom .price{ justify-self:start; }
+.plan-bottom .btn{ justify-self:end; }
+
+.amount{
+  font-size:34px;
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:38px;
+}
+
+.period{
+  color:var(--text-3);
+  font-size:14px;
+  margin-top:2px;
+}
+
+/* Featured plan */
+.featured{
+  border:1px solid rgba(var(--accent-rgb),0.55);
+  box-shadow:0 0 0 1px rgba(var(--accent-rgb),0.20), 0 18px 60px rgba(var(--accent-rgb),0.10);
+}
+
+.badge{
+  position:static;
+  z-index:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  align-self:flex-start;
+  white-space:nowrap;
+  line-height:1.2;
+  max-width:100%;
+  background:rgba(var(--accent-rgb),0.16);
+  border:1px solid rgba(var(--accent-rgb),0.35);
+  color:var(--text);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.02em;
+  padding:7px 12px;
+  border-radius:999px;
+  backdrop-filter:blur(10px);
+  margin-bottom:var(--s3);
+}
+
+/* Force featured labels to sit above headings, never overlap */
+.plan.featured .badge{
+  position:relative !important;
+  top:auto !important;
+  right:auto !important;
+  left:auto !important;
+  inset:auto !important;
+  display:inline-flex;
+  margin:0 0 14px 0;
+}
+
+.plan.featured h3{
+  margin-top:0;
+}
+
+@media (max-width:1024px){
+  .pricing-grid{ grid-template-columns:1fr; }
+  .plan{ min-height:auto; }
+}

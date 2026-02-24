@@ -1,0 +1,387 @@
+/* ===== base ===== */
+:root{
+  /* ONE place to change timing + vibe */
+  --scare-duration: 3.6s;     /* click sequence total */
+  --idle-bg-duration: 6s;      /* red “breathing” bg */
+  --idle-face-duration: 35s;   /* slow analog face loop */
+  --idle-glitch-duration: 2.8s;      /* speed of idle VHS */
+  --idle-scanline-opacity: 0.18;     /* scanlines strength */
+  --idle-noise-opacity: 0.12;        /* noise strength */
+
+  /* colors */
+  --bg-red-1: rgb(255, 0, 0);
+  --bg-red-2: rgb(170, 0, 0);
+  --bg-black-soft: rgb(10, 10, 10);
+  --bg-black: rgb(0, 0, 0);
+  --bg-white: rgb(255, 255, 255);
+
+  /* sizing */
+  --face-max-w: 600px;
+  --face-vw: 80vw;
+  --face-max-h: 80vh;
+  --cta-size: 50px;
+
+  /* face filters (idle + scare) */
+  --face-base-blur: 22px;
+  --face-base-contrast: 1.1;
+
+  /* VHS scanlines/noise */
+  --scanline-a: rgba(0,0,0,0.18);
+  --scanline-vignette: rgba(0,0,0,0.45);
+  --noise-a: rgba(0,0,0,0.08);
+  --noise-b: rgba(255,255,255,0.06);
+
+  /* RGB split intensity */
+  --rgb-red: rgba(255,0,0,0.55);
+  --rgb-cyan: rgba(0,255,255,0.45);
+  --rgb-red-2: rgba(255,0,0,0.45);
+  --rgb-cyan-2: rgba(0,255,255,0.35);
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* ===== idle background BEFORE click ===== */
+body:not(.scare){
+  background: var(--bg-red-1);
+  animation: idleBg var(--idle-bg-duration) ease-in-out infinite;
+}
+
+/* once clicked, timeline takes over */
+body.scare{
+  animation: bgTimeline var(--scare-duration) linear forwards;
+}
+
+/* Center stage */
+.splash{
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.splash-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.armed-text{
+  position: absolute;
+  left: 50%;
+  bottom: 14%;
+  transform: translateX(-50%);
+
+  z-index: 10;              /* ✅ above glitch layers + face */
+  pointer-events: none;
+
+  color: rgba(0, 0, 0, 0.95);
+  font-family: "horror", monospace;
+  font-size: 22px;
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  width: 0;
+  opacity: 0;
+
+  /* VHS look */
+  text-shadow:
+    -1px 0 rgba(255,0,0,0.55),
+     1px 0 rgba(0,255,255,0.45);
+  filter: contrast(1.2);
+}
+
+/* Typewriter + VHS jitter ONLY after first Enter click */
+body.armed:not(.scare) .armed-text{
+  opacity: 1;
+  animation:
+    typewriter 2.4s steps(25) forwards,
+    textJitter 0.18s steps(2) infinite,
+    textFlicker 2.2s steps(2) infinite;
+}
+
+
+/* ===== VHS layers ===== */
+.splash-inner::before,
+.splash-inner::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 4;
+}
+
+.splash-inner::before{
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      var(--scanline-a),
+      var(--scanline-a) 1px,
+      rgba(0,0,0,0) 3px,
+      rgba(0,0,0,0) 6px
+    ),
+    radial-gradient(circle at 50% 50%,
+      rgba(0,0,0,0) 40%,
+      var(--scanline-vignette) 100%
+    );
+}
+
+.splash-inner::after{
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--noise-a) 0px,
+      var(--noise-a) 2px,
+      var(--noise-b) 3px,
+      var(--noise-b) 4px
+    );
+  mix-blend-mode: overlay;
+}
+
+/* ===== face (centered, no movement) ===== */
+.splash-face{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* never changes */
+  width: min(var(--face-max-w), var(--face-vw));
+  max-height: var(--face-max-h);
+
+  opacity: 0;
+  filter: blur(var(--face-base-blur)) contrast(var(--face-base-contrast));
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ===== idle face animation BEFORE click ===== */
+body.armed:not(.scare) .splash-face{
+  animation: analogFade var(--idle-face-duration) ease-in-out infinite;
+}
+
+/* Subtle VHS glitch BEFORE clicking Enter */
+body:not(.scare) .splash-inner::before{
+  opacity: var(--idle-scanline-opacity);
+  animation: idleScanlines var(--idle-glitch-duration) steps(2) infinite;
+}
+
+body:not(.scare) .splash-inner::after{
+  opacity: var(--idle-noise-opacity);
+  animation: idleNoise calc(var(--idle-glitch-duration) * 0.6) steps(3) infinite;
+}
+
+/* ===== button ===== */
+.splash-cta{
+  position: relative;
+  z-index: 5;
+  color: black;
+  font-family: "horror", sans-serif;
+  font-size: var(--cta-size);
+  text-decoration: none;
+  opacity: 1;
+}
+
+/* click timeline: button fades out */
+body.scare .splash-cta{
+  animation: btnTimeline var(--scare-duration) ease forwards;
+}
+
+/* click timeline: face + VHS fx */
+body.scare .splash-face{
+  animation:
+    faceTimeline var(--scare-duration) linear forwards,
+    faceVhsFx var(--scare-duration) steps(2) forwards;
+}
+
+/* click timeline: glitch layers */
+body.scare .splash-inner::before{
+  animation: glitchLayer var(--scare-duration) steps(2) forwards;
+}
+body.scare .splash-inner::after{
+  animation: glitchLayer2 var(--scare-duration) steps(3) forwards;
+}
+
+/* ===== font ===== */
+@font-face{
+  font-family: horror;
+  src: url("../font/horror/Mokgech-Regular.ttf") format("truetype");
+}
+
+/* =========================================================
+   IDLE ANIMS
+========================================================= */
+@keyframes idleBg{
+  0%   { background-color: var(--bg-red-1); }
+  50%  { background-color: var(--bg-red-2); }
+  100% { background-color: var(--bg-red-1); }
+}
+
+/* Slow analog emergence loop */
+@keyframes analogFade{
+  0%   { opacity: 0;    filter: blur(18px) contrast(1.05) brightness(0.9); }
+  18%  { opacity: 0.06; filter: blur(18px) contrast(1.08) brightness(0.92); }
+  36%  { opacity: 0.16; filter: blur(14px) contrast(1.18) brightness(0.98); }
+  52%  { opacity: 0.10; filter: blur(16px) contrast(1.12) brightness(0.95); }
+  70%  { opacity: 0.19; filter: blur(12px) contrast(1.30) brightness(1.03); }
+  86%  { opacity: 0.08; filter: blur(16px) contrast(1.10) brightness(0.94); }
+  100% { opacity: 0;    filter: blur(18px) contrast(1.05) brightness(0.9); }
+}
+
+/* =========================================================
+   6-STEP JUMPSCARE TIMELINE
+========================================================= */
+
+/* 1) red -> 2) black -> 4) HARD white */
+@keyframes bgTimeline{
+  0%   { background-color: var(--bg-red-1); }
+  80%  { background-color: var(--bg-black); }  /* fade to black */
+  98%  { background-color: var(--bg-black); }       /* hold black */
+  99%  { background-color: var(--bg-white); }       /* HARD flash */
+  100% { background-color: var(--bg-white); }
+}
+
+/* button fades away */
+@keyframes btnTimeline{
+  0%   { opacity: 1; }
+  45%  { opacity: 0.25; }
+  55%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* face control:
+   - OFF during fade-to-black
+   - ON during glitch/flash
+*/
+@keyframes faceTimeline{
+  0%, 98%{
+    opacity: 0;
+    filter: blur(22px) contrast(1.1);
+  }
+
+  /* (optional) you can make it visible earlier by changing this to >0 */
+  99%{
+    opacity: 1;
+    filter: blur(18px) contrast(1.35);
+  }
+
+  100%{
+    opacity: 1;
+    filter: blur(0px) contrast(1.35);
+  }
+}
+
+/* RGB split during glitch windows */
+@keyframes faceVhsFx{
+  0%, 55%{
+    filter: blur(28px) contrast(1.1);
+  }
+
+  57%{
+    filter:
+      blur(14px) contrast(1.5)
+      drop-shadow(-10px 0 0 var(--rgb-red))
+      drop-shadow(10px 0 0 var(--rgb-cyan));
+  }
+  64%{
+    filter:
+      blur(10px) contrast(1.65)
+      drop-shadow(-14px 0 0 var(--rgb-red))
+      drop-shadow(14px 0 0 var(--rgb-cyan));
+  }
+
+  68%{
+    filter: blur(0px) contrast(1.35);
+  }
+
+  72%{
+    filter:
+      blur(0px) contrast(1.65)
+      drop-shadow(-12px 0 0 var(--rgb-red-2))
+      drop-shadow(12px 0 0 var(--rgb-cyan-2));
+  }
+  78%{
+    filter:
+      blur(0px) contrast(1.8)
+      drop-shadow(-16px 0 0 var(--rgb-red-2))
+      drop-shadow(16px 0 0 var(--rgb-cyan-2));
+  }
+  86%{
+    filter: blur(0px) contrast(1.35);
+  }
+
+  100%{
+    filter: blur(0px) contrast(1.35);
+  }
+}
+
+/* scanlines/vignette ON during glitch windows */
+@keyframes glitchLayer{
+  0%, 96% { opacity: 0.65; }
+  96% { opacity: 1; }
+  97% { opacity: 0.45; }
+  98% { opacity: 1; }
+  99% { opacity: 0.65; }
+  100%{ opacity: 0; }
+}
+
+/* noise bursts */
+@keyframes glitchLayer2{
+  0%, 55% { opacity: 0; transform: translateX(0); }
+  58% { opacity: 1; transform: translateX(-10px); }
+  61% { opacity: 0.7; transform: translateX(10px); }
+  66% { opacity: 1; transform: translateX(-6px); }
+  68% { opacity: 0; transform: translateX(0); }
+
+  72% { opacity: 1; transform: translateX(8px); }
+  76% { opacity: 0.75; transform: translateX(-8px); }
+  82% { opacity: 1; transform: translateX(6px); }
+  86% { opacity: 0; transform: translateX(0); }
+
+  100%{ opacity: 0; transform: translateX(0); }
+}
+
+@keyframes idleScanlines{
+  0%   { opacity: 0.65; }
+  35%  { opacity: 0.98; }
+  50%  { opacity: 1; }
+  70%  { opacity: 0.65; }
+  100% { opacity: 0.0; }
+}
+
+@keyframes idleNoise{
+  0%   { opacity: 0.05; transform: translateX(0); }
+  25%  { opacity: 0.12; transform: translateX(-2px); }
+  50%  { opacity: 0.08; transform: translateX(2px); }
+  75%  { opacity: 0.14; transform: translateX(-1px); }
+  100% { opacity: 0.05; transform: translateX(0); }
+}
+
+/* “there is no salvation” = 20 chars including spaces */
+@keyframes typewriter{
+  from { width: 0; }
+  to   { width: 25ch; }
+}
+
+/* tiny VHS jitter */
+@keyframes textJitter{
+  0%   { transform: translateX(-50%) translateY(0); }
+  50%  { transform: translateX(calc(-50% + 1px)) translateY(-1px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* subtle brightness/opacity flicker */
+@keyframes textFlicker{
+  0%, 100% { opacity: 1; filter: contrast(1.2) brightness(1); }
+  48%      { opacity: 0.9; filter: contrast(1.4) brightness(1.1); }
+  49%      { opacity: 0.6; filter: contrast(1.6) brightness(0.9); }
+  50%      { opacity: 1; filter: contrast(1.2) brightness(1); }
+}

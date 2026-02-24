@@ -1,0 +1,196 @@
+/* Page atmosphere */
+.projects-hero,
+.projects-gallery,
+.projects-cta {
+  position: relative;
+}
+
+/* Subtle premium gradients behind content */
+.projects-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--grad-accent), var(--grad-accent-2);
+  opacity: 0.9;
+}
+
+.projects-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero layout */
+.projects-hero-copy {
+  max-width: 720px;
+}
+
+.projects-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* If you don’t already have this in components.css */
+.text-link {
+  text-decoration: none;
+  color: var(--color-text-2);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-2) var(--ease-out), color var(--dur-2) var(--ease-out);
+}
+.text-link:hover {
+  color: var(--color-text);
+  border-color: rgba(255,255,255,0.35);
+}
+.text-link.small {
+  font-size: 14px;
+  color: var(--color-text-3);
+}
+
+/* Section header */
+.section-header {
+  text-align: left;
+  max-width: 760px;
+  margin-bottom: var(--space-6);
+}
+
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+/* Project card = glass + restraint */
+.project-card {
+  background: linear-gradient(180deg, var(--surface-2), var(--surface-1));
+  border: 1px solid var(--border-1);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  transition: transform var(--dur-2) var(--ease-out),
+              border-color var(--dur-2) var(--ease-out),
+              box-shadow var(--dur-2) var(--ease-out);
+  position: relative;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  background: radial-gradient(
+    600px 240px at 20% 0%,
+    rgba(var(--accent-rgb), 0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity var(--dur-2) var(--ease-out);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-2);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.45);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Thumbnail */
+.project-thumb {
+  aspect-ratio: 16 / 10;
+  background: rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Body */
+.project-body {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.project-meta h3 {
+  margin: 0 0 var(--space-1) 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.project-desc {
+  margin: 0;
+  color: var(--color-text-2);
+  font-size: 16px;
+  line-height: 26px;
+}
+
+/* Actions */
+.project-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-1);
+}
+
+/* Compact button variant */
+.btn-compact {
+  height: 40px;
+  padding: 0 var(--space-3);
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* CTA panel */
+.cta-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.cta-copy {
+  max-width: 680px;
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+
+
+/* Icon buttons (make icons feel consistent and not full-color loud)
+   If you can, replace Gmail icon with a mono SVG later.
+*/
+.header-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-panel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

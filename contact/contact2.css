@@ -1,0 +1,236 @@
+/* Contact atmosphere */
+.contact-hero{
+  position:relative;
+}
+.contact-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:var(--grad-1), var(--grad-2);
+  opacity:.95;
+}
+
+/* Split layout */
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--s4);
+  align-items:start;
+}
+
+/* Panel text */
+.panel-title{
+  margin:0 0 var(--s2) 0;
+}
+.panel-subtitle{
+  margin:0 0 var(--s4) 0;
+  color: var(--text-2);
+  font-size:16px;
+  line-height:26px;
+}
+
+/* Booking panel */
+.calendly-shell{
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius-lg);
+  background: rgba(0,0,0,.18);
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.calendly-placeholder{
+  height: 100%;
+  padding: var(--s5);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap: var(--s3);
+}
+
+.placeholder-title{
+  margin:0;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.placeholder-sub{
+  margin:0;
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 24px;
+}
+
+/* Booking note */
+.booking-note{
+  margin-top: var(--s4);
+  padding-top: var(--s4);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.note-title{
+  margin:0 0 var(--s2) 0;
+  font-size: 14px;
+  letter-spacing: .02em;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.note-list{
+  margin:0;
+  padding-left: 18px;
+  color: var(--text-2);
+  display:flex;
+  flex-direction:column;
+  gap: var(--s2);
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.calendly-shell {
+  margin-top: 80px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+  background: #0b0b0b;
+  padding: 24px;
+}
+
+/* Form */
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap: var(--s3);
+}
+
+.field-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s3);
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap: var(--s1);
+}
+
+label{
+  font-size: 14px;
+  color: var(--text-2);
+  font-weight: 500;
+}
+
+input, select, textarea{
+  width:100%;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.25);
+  color: var(--text);
+  padding: 12px 14px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color var(--dur-2) var(--ease),
+              box-shadow var(--dur-2) var(--ease);
+}
+
+textarea{
+  resize: vertical;
+  min-height: 160px;
+}
+
+input::placeholder, textarea::placeholder{
+  color: rgba(255,255,255,.45);
+}
+
+input:focus, select:focus, textarea:focus{
+  border-color: rgba(var(--accent-rgb), .55);
+  box-shadow: var(--glow-ring);
+}
+
+.form-actions{
+  display:flex;
+  gap: var(--s3);
+  flex-wrap: wrap;
+  margin-top: var(--s2);
+}
+
+.form-fineprint{
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-3);
+}
+
+/* Trust strip */
+.trust-strip{
+  margin-top: var(--s6);
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s3);
+}
+
+.trust-item{
+  padding: var(--s4);
+  border-radius: var(--radius-lg);
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.06);
+  backdrop-filter: blur(8px);
+}
+
+.trust-kicker{
+  display:block;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(var(--accent-rgb), .85);
+  margin-bottom: var(--s1);
+  font-weight: 600;
+}
+
+.trust-text{
+  display:block;
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 24px;
+}
+
+/* Responsive */
+@media (max-width: 1024px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+  .field-row{
+    grid-template-columns: 1fr;
+  }
+  .calendly-shell{
+    min-height: 420px;
+  }
+  .trust-strip{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* GROWTH PACKAGE: form UI states (minimal) */
+.field-error{
+  min-height: 18px;
+  font-size: 13px;
+  line-height: 18px;
+  color: rgba(255, 120, 120, 0.92);
+}
+
+.form-status{
+  margin-top: var(--s2);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+  color: var(--text-2);
+}
+
+.form-status.is-success{
+  border-color: rgba(120, 255, 190, 0.22);
+}
+
+.form-status.is-error{
+  border-color: rgba(255, 120, 120, 0.22);
+}

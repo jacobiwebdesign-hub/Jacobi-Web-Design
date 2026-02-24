@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Jacobi Web Design</title>
+  <meta name="description" content="Book a free consult or send project details. Response typically within 24 hours (Monâ€“Fri)." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/site-global-architecture/base2.css">
+  <link rel="stylesheet" href="/site-global-architecture/components.css">
+  <link rel="stylesheet" href="/site-global-architecture/token.css">
+  <link rel="stylesheet" href="/contact/contact2.css">
+</head>
+
+<body>
+
+  <!-- Background -->
+  <video class="bg-video" autoplay muted loop playsinline preload="metadata">
+    <source src="/video/jwdbgvid.webm" type="video/webm" />
+    <source src="/video/jwdbgvid.mp4" type="video/mp4" />
+  </video>
+  <div class="bg-overlay"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <nav class="nav" aria-label="Primary">
+        <a href="/landing/landing2.html">Home</a>
+        <a href="/project/projects2.html">Projects</a>
+        <a href="/pricing/pricing2.html">Pricing</a>
+      </nav>
+
+      <a href="/index2.html" aria-label="Home">
+        <img src="/image/Jacobiwebdesignlogo.png" class="brand-logo" alt="Jacobi Web Design">
+      </a>
+
+      <div class="header-actions">
+        <a href="mailto:jacobiwebdesign038@gmail.com" class="icon-btn" aria-label="Email">
+          <img src="/image/gmail icon.png" alt="">
+        </a>
+        <a href="https://www.linkedin.com/in/jacobien-cole-7958173aa" class="icon-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <img src="/image/LinkedIn vector icon.png" alt="">
+        </a>
+        <a href="tel:15135493677" class="icon-btn" aria-label="Call">
+          <img src="/image/call icon.png" alt="">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="section contact-hero">
+      <div class="container reveal">
+        <h1>Let's build your site.</h1>
+        <p>
+          Book a quick consult or send details through the form. I'll respond within 24 hours.
+        </p>
+      </div>
+    </section>
+
+    <!-- Split layout -->
+    <section class="section contact-main">
+      <div class="container">
+        <div class="contact-grid reveal delay-1">
+
+          <!-- Booking -->
+          <section class="card booking">
+            <h2 class="panel-title">Book a free consult</h2>
+            <p class="panel-subtitle">
+              Fastest way to get started. We'll cover goals, timeline, and the best package for your stage.
+            </p>
+
+          <div class="calendly-inline-widget"
+     data-url="https://calendly.com/jacobiwebdesign038/30min?background_color=000000&text_color=ffffff&primary_color=1de9ff"
+     style="width:100%; min-width:320px; height:800px;">
+</div>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+            <div class="booking-note">
+              <p class="note-title">What to have ready</p>
+              <ul class="note-list">
+                <li>Business name + what you do</li>
+                <li>Your goal (leads, bookings, sales)</li>
+                <li>Any examples you like</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Form -->
+          <section class="card form-panel" id="growth-contact">
+            <!-- GROWTH PACKAGE: contact anchor -->
+            <h2 class="panel-title">Send project details</h2>
+            <p class="panel-subtitle">
+              Prefer email? Fill out your details here and I'll reply with next steps.
+            </p>
+
+            <form class="contact-form" id="leadForm" action="https://formsubmit.co/jacobiwebdesign038@gmail.com" method="post" novalidate>
+              <input type="hidden" id="package" name="package" value="Growth">
+              <input type="hidden" name="_subject" value="New Growth lead - Jacobi Web Design">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+                  <span class="field-error" id="err-name" role="alert"></span>
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required>
+                  <span class="field-error" id="err-email" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="business">Business Name</label>
+                  <input id="business" name="business" type="text" autocomplete="organization" placeholder="Your business name" required>
+                  <span class="field-error" id="err-business" role="alert"></span>
+                </div>
+                <div class="field">
+                  <label for="website">Website (optional)</label>
+                  <input id="website" name="website" type="url" autocomplete="url" placeholder="https://yourwebsite.com">
+                  <span class="field-error" id="err-website" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="phone">Phone (optional)</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 555-5555">
+                </div>
+                <div class="field">
+                  <label for="budget">Budget range</label>
+                  <select id="budget" name="budget" required>
+                    <option value="" disabled selected>Select one</option>
+                    <option>$250-$1500 (Starter)</option>
+                    <option>$3600-$6000 (Multi-page + extras)</option>
+                    <option>$6000+ (Custom scope)</option>
+                  </select>
+                  <span class="field-error" id="err-budget" role="alert"></span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Tell me what you're building and what success looks like." required></textarea>
+                <span class="field-error" id="err-message" role="alert"></span>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit" data-track="growth_form_submit">Send message</button>
+                <a class="btn btn-secondary" href="mailto:jacobiwebdesign038@gmail.com?subject=Website%20Inquiry" data-track="contact_email_direct">Email directly</a>
+              </div>
+
+              <p class="form-fineprint">
+                Response time: typically within 24 hours (Mon-Fri).
+              </p>
+
+              <div class="form-status" id="formStatus" aria-live="polite"></div>
+            </form>
+
+            <form action="https://formsubmit.co/jacobiwebdesign038@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+              <input type="hidden" name="_subject" value="New Website Inquiry">
+              
+              <input type="text" name="name" required>
+              <input type="email" name="email" required>
+              <button type="submit">Send</button>
+            </form>
+          </section>
+
+        </div>
+
+        <!-- Trust strip -->
+        <div class="trust-strip reveal delay-2">
+          <div class="trust-item">
+            <span class="trust-kicker">Build quality</span>
+            <span class="trust-text">Custom-coded, fast, and easy to maintain.</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-kicker">No templates</span>
+            <span class="trust-text">Designed around your brand and goals.</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-kicker">Launch support</span>
+            <span class="trust-text">Clear next steps and deployment guidance.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <img src="/image/Jacobiwebdesignlogo.png" class="brand-logo" alt="Jacobi Web Design">
+          <p style="margin-top:16px">Clean, modern websites built to load fast and convert.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h3 class="footer-title">Quick links</h3>
+            <a class="footer-link" href="/landing/landing2.html">Home</a>
+            <a class="footer-link" href="/pricing/pricing2.html">Pricing</a>
+            <a class="footer-link" href="/project/projects2.html">Projects</a>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-title">Contact</h3>
+            <a class="footer-link" href="mailto:jacobiwebdesign038@gmail.com">jacobiwebdesign038@gmail.com</a>
+            <a class="footer-link" href="tel:15135493677">(513) 549-3677</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Â© <span id="year"></span> Jacobi Web Design. All rights reserved.</span>
+        <span>Custom-built | Fast | No templates</span>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Minimal tracking hook (no analytics library assumed)
+      window.jwdbTrack = window.jwdbTrack || function(){};
+
+      function setError(input, msg){
+        input.setAttribute("aria-invalid", msg ? "true" : "false");
+        var errId = "err-" + input.id;
+        var err = document.getElementById(errId);
+        if(err) err.textContent = msg || "";
+      }
+
+      function isValidEmail(v){
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      }
+
+      function isValidUrlOrEmpty(v){
+        if(!v) return true;
+        try { new URL(v); return true; } catch(_e){ return false; }
+      }
+
+      (function initGrowthContext(){
+        var pkg = document.getElementById("package");
+        if(pkg) pkg.value = "Growth";
+      })();
+
+      document.addEventListener("click", function(e){
+        var el = e.target && e.target.closest ? e.target.closest("[data-track]") : null;
+        if(!el) return;
+        try { window.jwdbTrack("click", { id: el.getAttribute("data-track"), href: el.getAttribute("href") }); } catch(_e){}
+      });
+
+      (function(){
+        var form = document.getElementById("leadForm");
+        if(!form) return;
+
+        var status = document.getElementById("formStatus");
+        var name = document.getElementById("name");
+        var email = document.getElementById("email");
+        var business = document.getElementById("business");
+        var website = document.getElementById("website");
+        var budget = document.getElementById("budget");
+        var message = document.getElementById("message");
+
+        form.addEventListener("submit", function(e){
+          e.preventDefault();
+
+          if(status){ status.textContent = ""; status.className = "form-status"; }
+          [name,email,business,website,budget,message].forEach(function(i){ if(i) setError(i, ""); });
+
+          var ok = true;
+
+          if(!name.value.trim()){ setError(name, "Please enter your name."); ok = false; }
+          if(!email.value.trim() || !isValidEmail(email.value.trim())){ setError(email, "Please enter a valid email."); ok = false; }
+          if(!business.value.trim()){ setError(business, "Please enter your business name."); ok = false; }
+          if(!isValidUrlOrEmpty(website.value.trim())){ setError(website, "Please enter a valid URL (or leave blank)."); ok = false; }
+          if(!budget.value){ setError(budget, "Please select a budget range."); ok = false; }
+          if(!message.value.trim()){ setError(message, "Please enter a message."); ok = false; }
+
+          if(!ok){
+            if(status){
+              status.textContent = "Please fix the highlighted fields and try again.";
+              status.className = "form-status is-error";
+            }
+            try { window.jwdbTrack("form_submit", { id: "growth_form", status: "fail" }); } catch(_e){}
+            return;
+          }
+          if(status){
+            status.textContent = "Sending message...";
+            status.className = "form-status is-success";
+          }
+
+          try { window.jwdbTrack("form_submit", { id: "growth_form", status: "success" }); } catch(_e){}
+
+          form.submit();
+        });
+      })();
+    </script>
+  </footer>
+
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
+
+

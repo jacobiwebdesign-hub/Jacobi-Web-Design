@@ -1,0 +1,86 @@
+/* ================================
+   DESIGN TOKENS
+================================ */
+
+:root {
+
+  /* Colors */
+  --color-bg-dark: #0c0f16;
+  --color-bg-overlay: rgba(0, 0, 0, 0.6);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #c7c7c7;
+  --color-button-light: #e5e5e5;
+  --color-button-text: #111111;
+
+  /* Typography */
+  --font-family-base: "Inter", system-ui, -apple-system, sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 2.5rem;
+  --font-size-xxl: 3.5rem;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  /* Layout */
+  --container-width: 1200px;
+}
+
+/* ================================
+   RESET
+================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background: var(--color-bg-dark);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+/* ================================
+   GLOBAL UTILITIES
+================================ */
+
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* ================================
+   BUTTON COMPONENT
+================================ */
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-light {
+  background: var(--color-button-light);
+  color: var(--color-button-text);
+}
+
+.btn-light:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}

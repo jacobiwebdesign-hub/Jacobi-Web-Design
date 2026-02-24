@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jacobi Web Design | Ranking Horror Films</title>
+  <link rel="stylesheet" href="/website-portfolio-1/rankingHorror.css" />
+</head>
+
+<body>
+  <main class="splash">
+    <div class="splash-inner">
+      <!-- IMPORTANT: use a working path (see note below) -->
+      <img src="../image/creepy-face.png" alt="horrorface" class="splash-face">
+      <audio id="whisperAudio" loop preload="auto">
+        <source src="/sound/whisper.mp3" type="audio/mpeg">
+      </audio>
+      
+      <p class="armed-text" id="armedText">
+            There is no Salvation.
+        </p>
+
+      <a class="splash-cta"
+         href="/project/projects.html"
+         id="enterBtn">Enter</a>
+    </div>
+  </main>
+
+ <script>
+  const enterBtn = document.getElementById("enterBtn");
+  const whisper = document.getElementById("whisperAudio");
+
+  // 1st click = start whisper + start analogFade (armed)
+  // 2nd click = start jumpscare + redirect
+  let enterArmed = false;
+
+  function cssTimeToMs(timeStr) {
+    const s = String(timeStr).trim();
+    if (s.endsWith("ms")) return parseFloat(s);
+    if (s.endsWith("s")) return parseFloat(s) * 1000;
+    return parseFloat(s) * 1000;
+  }
+
+  function getCssVar(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  // --- Whisper volume pulsing synced to --idle-face-duration ---
+  let pulseRAF = null;
+  let pulseStart = 0;
+
+  function bellCurve(t01) {
+    return Math.sin(Math.PI * t01); // 0 -> 1 -> 0
+  }
+
+  function startPulsing() {
+    if (!whisper) return;
+    if (pulseRAF) return;
+
+    const idleFaceDurationMs = cssTimeToMs(getCssVar("--idle-face-duration") || "35s");
+    const maxVol = 0.35; // adjust loudness (0.2 - 0.5)
+    const minVol = 0.02;
+
+    pulseStart = performance.now();
+
+    const tick = (now) => {
+      if (document.body.classList.contains("scare")) {
+        pulseRAF = null;
+        return;
+      }
+
+      const elapsed = now - pulseStart;
+      const t = (elapsed % idleFaceDurationMs) / idleFaceDurationMs;
+
+      whisper.volume = minVol + (maxVol - minVol) * bellCurve(t);
+
+      pulseRAF = requestAnimationFrame(tick);
+    };
+
+    pulseRAF = requestAnimationFrame(tick);
+  }
+
+  function stopPulsing() {
+    if (pulseRAF) cancelAnimationFrame(pulseRAF);
+    pulseRAF = null;
+  }
+
+  function startWhisper() {
+    if (!whisper) return;
+    whisper.volume = 0;
+
+    whisper.play()
+      .then(() => startPulsing())
+      .catch((err) => console.log("Whisper play blocked:", err));
+  }
+
+  function stopWhisperInstant() {
+    if (!whisper) return;
+
+    stopPulsing();
+    whisper.pause();
+    whisper.currentTime = 0;
+    whisper.volume = 0;
+  }
+
+  // Optional: if you want analogFade to restart EXACTLY when armed starts
+  function restartAnalogFade() {
+    const face = document.querySelector(".splash-face");
+    if (!face) return;
+
+    // only applies once armed; this "restarts" animation timeline
+    face.style.animation = "none";
+    // force reflow
+    void face.offsetHeight;
+    face.style.animation = "";
+  }
+
+  enterBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // First click: start whisper + start analogFade loop
+    if (!enterArmed) {
+      enterArmed = true;
+
+      document.body.classList.add("armed"); // your CSS should use body.armed:not(.scare) .splash-face { animation: analogFade ... }
+      restartAnalogFade();
+
+      startWhisper();
+
+      enterBtn.textContent = "Enter";
+      return;
+    }
+
+    // Second click: jumpscare + redirect
+    if (document.body.classList.contains("scare")) return;
+
+    stopWhisperInstant();
+    document.body.classList.add("scare");
+
+    const scareMs = cssTimeToMs(getCssVar("--scare-duration") || "1.55s");
+    const bufferMs = 120;
+
+    setTimeout(() => {
+      window.location.href = enterBtn.getAttribute("href");
+    }, scareMs + bufferMs);
+  });
+</script>
+
+</body>
+</html>
