@@ -385,3 +385,16 @@ body.scare .splash-inner::after{
   49%      { opacity: 0.6; filter: contrast(1.6) brightness(0.9); }
   50%      { opacity: 1; filter: contrast(1.2) brightness(1); }
 }
+
+@media (max-width: 768px){
+  :root{
+    --face-vw: 92vw;
+    --cta-size: 34px;
+  }
+
+  .armed-text{
+    bottom: 10%;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+}

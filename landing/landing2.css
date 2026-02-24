@@ -234,3 +234,28 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: var(--space-3);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .plan-bottom {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .plan-bottom .btn {
+    justify-self: start;
+    width: 100%;
+  }
+}

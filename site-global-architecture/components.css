@@ -256,3 +256,36 @@
     align-items:flex-start;
   }
 }
+
+@media (max-width:768px){
+  .site-header{
+    padding: var(--space-2) 0;
+  }
+
+  .header-inner{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .nav{
+    width: 100%;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .header-actions{
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .btn{
+    min-height: 44px;
+  }
+
+  .footer-links-group{
+    flex-direction: column;
+    width: 100%;
+    gap: var(--space-3);
+  }
+}

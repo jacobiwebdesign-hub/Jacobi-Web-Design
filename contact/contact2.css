@@ -210,6 +210,22 @@ input:focus, select:focus, textarea:focus{
   }
 }
 
+@media (max-width: 768px){
+  .form-actions{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-actions .btn{
+    width: 100%;
+  }
+
+  .calendly-shell{
+    margin-top: 32px;
+    padding: 12px;
+  }
+}
+
 /* GROWTH PACKAGE: form UI states (minimal) */
 .field-error{
   min-height: 18px;

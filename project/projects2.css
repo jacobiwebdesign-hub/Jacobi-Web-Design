@@ -194,3 +194,18 @@
     align-items: flex-start;
   }
 }
+
+@media (max-width: 768px) {
+  .projects-hero-actions,
+  .project-actions,
+  .cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .projects-hero-actions .btn,
+  .project-actions .btn,
+  .cta-actions .btn {
+    width: 100%;
+  }
+}

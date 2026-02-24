@@ -69,6 +69,7 @@ body {
 .btn {
   display: inline-block;
   padding: 0.75rem 2rem;
+  min-height: 44px;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
@@ -83,4 +84,25 @@ body {
 .btn-light:hover {
   transform: translateY(-2px);
   opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 94%;
+  }
+
+  :root {
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

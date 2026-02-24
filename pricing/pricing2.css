@@ -124,3 +124,29 @@
   .pricing-grid{ grid-template-columns:1fr; }
   .plan{ min-height:auto; }
 }
+
+@media (max-width:768px){
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+  .plan-bottom{
+    grid-template-columns:1fr;
+    align-items:start;
+  }
+
+  .plan-bottom .btn{
+    justify-self:start;
+    width:100%;
+  }
+
+  .badge{
+    font-size:11px;
+    padding:6px 10px;
+  }
+}

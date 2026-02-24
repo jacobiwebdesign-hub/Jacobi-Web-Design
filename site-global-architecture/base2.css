@@ -72,3 +72,28 @@ p{
   color:var(--color-text-3);
   margin:0 0 var(--space-2) 0;
 }
+
+@media (max-width: 1024px){
+  .section{
+    padding: var(--space-6) 0;
+  }
+}
+
+@media (max-width: 768px){
+  body{
+    overflow-x: hidden;
+  }
+
+  .container{
+    padding: 0 var(--space-2);
+  }
+
+  .section{
+    padding: var(--space-5) 0;
+  }
+
+  p{
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
