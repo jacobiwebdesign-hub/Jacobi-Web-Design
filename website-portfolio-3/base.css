@@ -15,22 +15,14 @@
   /* Typography */
   --font-family-base: "Inter", system-ui, -apple-system, sans-serif;
 
-  --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;
   --font-size-lg: 1.25rem;
-  --font-size-xl: 2.5rem;
-  --font-size-xxl: 3.5rem;
-
-  /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 6rem;
+  --font-size-xl: clamp(1.8rem, 6vw, 2.5rem);
+  --font-size-xxl: clamp(2.2rem, 8vw, 3.5rem);
 
   /* Layout */
-  --container-width: 1200px;
+  --container-max: 1200px;
 }
 
 /* ================================
@@ -41,8 +33,19 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: clip; /* modern safe overflow control */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 body {
@@ -53,27 +56,30 @@ body {
 }
 
 /* ================================
-   GLOBAL UTILITIES
+   CONTAINER
 ================================ */
 
 .container {
-  width: 90%;
-  max-width: var(--container-width);
-  margin: 0 auto;
+  width: 100%;
+  max-width: var(--container-max);
+  padding-inline: 1.25rem;
+  margin-inline: auto;
 }
 
 /* ================================
-   BUTTON COMPONENT
+   BUTTON
 ================================ */
 
 .btn {
-  display: inline-block;
-  padding: 0.75rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.25rem;
   min-height: 44px;
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  transition: transform .2s ease, opacity .2s ease;
 }
 
 .btn-light {
@@ -83,26 +89,18 @@ body {
 
 .btn-light:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
+  opacity: .95;
 }
 
-@media (max-width: 768px) {
-  .container {
-    width: 94%;
-  }
+/* ================================
+   MOBILE STACK DEFAULT
+================================ */
 
-  :root {
-    --font-size-xl: 2rem;
-    --font-size-xxl: 2.5rem;
-    --space-lg: 2.5rem;
-    --space-xl: 4rem;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
+.grid-2,
+.grid-3,
+.services,
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }

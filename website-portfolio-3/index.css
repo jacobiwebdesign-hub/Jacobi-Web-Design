@@ -100,15 +100,14 @@ body {
 ================================ */
 
 .hero-products {
-  position: absolute;
-  left: 50%;
-  bottom: clamp(8px, 2vh, 20px);
-  transform: translateX(-50%);
-  width: min(1200px, 90%);
+  position: relative; /* remove absolute positioning */
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: clamp(0.75rem, 2vw, 1.75rem);
+  gap: 1rem;
+  flex-wrap: wrap; /* prevents overflow */
+  width: 100%;
 }
 
 .product {
@@ -117,18 +116,15 @@ body {
 }
 
 .console {
-  width: clamp(340px, 48vw, 560px);
-  z-index: 2;
+  width: clamp(240px, 70vw, 520px);
 }
 
 .controller {
-  width: clamp(150px, 20vw, 230px);
-  transform: translateY(24px);
+  width: clamp(100px, 30vw, 200px);
 }
 
 .headset {
-  width: clamp(180px, 24vw, 280px);
-  transform: translateY(12px);
+  width: clamp(110px, 34vw, 240px);
 }
 
 /* ================================
