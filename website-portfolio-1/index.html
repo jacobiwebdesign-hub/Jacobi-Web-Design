@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jacobi Web Design | Beyond The Threshold</title>
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <main class="splash" aria-label="Horror splash page">
+    <div class="splash-inner">
+      <div class="bg-blackout" aria-hidden="true"></div>
+      <div class="atmosphere atmosphere-vignette" aria-hidden="true"></div>
+      <div class="atmosphere atmosphere-glow" aria-hidden="true"></div>
+
+      <img
+        src="../image/creepy-face.png"
+        alt="A distorted horror face slowly emerging from darkness"
+        class="splash-face"
+      />
+
+      <audio id="whisperAudio" preload="auto" loop>
+        <source src="/sound/whisper.mp3" type="audio/mpeg" />
+      </audio>
+
+      <p class="armed-text" id="armedText" aria-live="polite">
+        There is no salvation.
+      </p>
+
+      <a
+        class="splash-cta"
+        href="./landing-page.html"
+        id="enterBtn"
+        aria-label="Enter horror movie rankings"
+      >
+        Enter
+      </a>
+    </div>
+  </main>
+
+  <script src="./index.js"></script>
+</body>
+</html>

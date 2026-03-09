@@ -4,54 +4,111 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jacobi Web Design</title>
-  <link rel="stylesheet" href="/index.css" />
+  <meta name="description" content="Custom-coded websites for small businesses that want a sharper brand presence, stronger trust, and more leads." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/site-global-architecture/token.css">
+  <link rel="stylesheet" href="/site-global-architecture/base2.css">
+  <link rel="stylesheet" href="/site-global-architecture/components.css">
+  <link rel="stylesheet" href="/index-redesign.css">
 </head>
 <body>
+  <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="/image/bg-poster.jpg">
+    <source src="/video/jwdbgvid.webm" type="video/webm" />
+    <source src="/video/jwdbgvid.mp4" type="video/mp4" />
+  </video>
 
-<video
-      class="bg-video"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      poster="/image/bg-poster.jpg"
-    >
-      <source src="/video/jwdbgvid.webm" type="video/webm" />
-      <source src="/video/jwdbgvid.mp4" type="video/mp4" />
-    </video>
-    <div class="bg-overlay" aria-hidden="true"></div>
-<header class="hero">
-  <div class="hero-overlay"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+  <div class="page-noise" aria-hidden="true"></div>
 
-  <div class="container hero-inner">
+  <header class="splash-header">
+    <div class="container splash-header-inner">
+      <a href="/index.html" class="brand-mark" aria-label="Jacobi Web Design home">
+        <img src="/image/Jacobiwebdesignlogo.png" alt="Jacobi Web Design" class="brand-logo">
+      </a>
 
-    <div class="hero-top">
-      <img src="/image/Jacobiwebdesignlogo.png" alt="Jacobi Web Design Logo" class="logo">
-      <div class="contact-icons">
-       <a href="/contact/contact2.html">Email</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Call</a>
+      <nav class="splash-nav" aria-label="Primary">
+        <a href="/landing/landing2.html">Home</a>
+        <a href="/pricing/pricing2.html">Pricing</a>
+        <a href="/project/projects2.html">Projects</a>
+        <a href="/contact/contact2.html">Contact</a>
+      </nav>
+
+      <div class="splash-actions">
+        <a href="mailto:jacobiwebdesign038@gmail.com" class="icon-btn" aria-label="Email">
+          <img src="/image/gmail icon.png" alt="">
+        </a>
+
+        <a href="https://www.linkedin.com/in/jacobien-cole-7958173aa" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <img src="/image/LinkedIn vector icon.png" alt="">
+        </a>
+
+        <a href="tel:15135493677" class="header-call">Book a Call</a>
       </div>
     </div>
+  </header>
 
-    <div class="hero-content">
-      <h1>Custom built websites.</h1>
-      <p>
-        Fast, modern websites for small businesses —
-        designed for clarity, performance, and real leads.
-      </p>
+  <main class="splash-main">
+    <section class="hero-shell">
+      <div class="container">
+        <div class="hero-panel reveal">
+          <div class="hero-copy">
+            <p class="eyebrow">Custom-coded web design</p>
 
-      <div class="hero-actions">
-        <a href="./landing/landing2.html" class="btn-primary">Learn More!</a>
-        <a href="/pricing/pricing2.html" class="link-secondary">See pricing</a>
+            <h1>Websites built to look premium and convert with confidence.</h1>
+
+            <p class="hero-lead">
+              Jacobi Web Design creates clean, modern websites for small businesses that need sharper presentation,
+              stronger trust, and a clear path to more inquiries.
+            </p>
+
+            <div class="hero-cta-row">
+              <a href="/landing/landing2.html" class="btn btn-primary">Enter Site</a>
+              <a href="/contact/contact2.html" class="btn btn-secondary">Start a Project</a>
+            </div>
+
+            <div class="hero-meta">
+              <span>Custom-coded</span>
+              <span>Mobile-first</span>
+              <span>Lead-focused</span>
+            </div>
+          </div>
+
+          <aside class="hero-side card reveal delay-1" aria-label="Studio summary">
+            <div>
+              <div class="side-topline">Best for</div>
+              <h2>Small businesses that need a cleaner digital first impression.</h2>
+              <p>
+                From splash pages to multi-page builds, every project is designed to feel clear, trustworthy,
+                and easy to act on.
+              </p>
+            </div>
+
+            <div class="stat-list">
+              <div class="stat-item">
+                <strong>01</strong>
+                <span>Modern visual direction</span>
+              </div>
+
+              <div class="stat-item">
+                <strong>02</strong>
+                <span>Fast, responsive layouts</span>
+              </div>
+
+              <div class="stat-item">
+                <strong>03</strong>
+                <span>Focused conversion flow</span>
+              </div>
+            </div>
+
+            <a href="/pricing/pricing2.html" class="text-link">See packages</a>
+          </aside>
+        </div>
       </div>
-    </div>
-
-  </div>
-</header>
-
+    </section>
+  </main>
 </body>
 </html>

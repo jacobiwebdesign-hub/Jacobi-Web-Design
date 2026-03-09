@@ -3,239 +3,235 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jacobi Web Design</title>
-  <meta name="description" content="Custom-coded websites built for speed, clarity, and measurable growth. Explore packages, including the Growth — Business Growth Package." />
-
-  <!-- TODO: Add GA4 / analytics script here -->
+  <title>Jacobi Web Design | Custom Websites Built to Convert</title>
+  <meta
+    name="description"
+    content="Custom-coded websites for small businesses, creators, and startups. Clean, modern, and conversion-focused web design built to help your brand look sharper and generate more leads."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="/site-global-architecture/token.css">
   <link rel="stylesheet" href="/site-global-architecture/base2.css">
   <link rel="stylesheet" href="/site-global-architecture/components.css">
-  <link rel="stylesheet" href="/site-global-architecture/token.css">
   <link rel="stylesheet" href="/landing/landing2.css">
 </head>
-
 <body>
-
-  <video class="bg-video" autoplay muted loop playsinline preload="metadata">
+  <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="/image/bg-poster.jpg">
     <source src="/video/jwdbgvid.webm" type="video/webm" />
     <source src="/video/jwdbgvid.mp4" type="video/mp4" />
   </video>
+
   <div class="bg-overlay" aria-hidden="true"></div>
+  <div class="page-noise" aria-hidden="true"></div>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <nav class="nav" aria-label="Primary">
-        <a href="/project/projects2.html">Projects</a>
+    <div class="container site-header-inner">
+      <a href="/index.html" class="brand-mark" aria-label="Jacobi Web Design home">
+        <img src="/image/Jacobiwebdesignlogo.png" alt="Jacobi Web Design" class="brand-logo">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/landing/landing2.html" class="is-active">Home</a>
         <a href="/pricing/pricing2.html">Pricing</a>
+        <a href="/project/projects2.html">Projects</a>
         <a href="/contact/contact2.html">Contact</a>
       </nav>
 
-      <a href="/index.html" aria-label="Home">
-        <img src="/image/Jacobiwebdesignlogo.png" class="brand-logo" alt="Jacobi Web Design">
-      </a>
-
-      <div class="header-actions">
-        <a href="/contact/contact2.html" class="icon-btn" aria-label="Email">
+      <div class="site-actions">
+        <a href="mailto:jacobiwebdesign038@gmail.com" class="icon-btn" aria-label="Email">
           <img src="/image/gmail icon.png" alt="">
         </a>
-        <a href="https://www.linkedin.com/in/jacobien-cole-7958173aa" class="icon-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
+
+        <a href="https://www.linkedin.com/in/jacobien-cole-7958173aa" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <img src="/image/LinkedIn vector icon.png" alt="">
         </a>
-        <a href="tel:15135493677" class="icon-btn" aria-label="Call">
-          <img src="/image/call icon.png" alt="">
-        </a>
+
+        <a href="/contact/contact2.html" class="header-cta">Start a Project</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
-
-        <div class="hero-media reveal">
-          <video autoplay muted loop playsinline preload="metadata" poster="/image/hero-poster.jpg">
-            <source src="/video/jwdbdvid.webm" type="video/webm" />
-            <source src="/video/jwdbdvid.mp4" type="video/mp4" />
-          </video>
-        </div>
-
-        <div class="hero-content reveal delay-1">
-          <h1>Custom websites that convert.</h1>
-          <p>
-            Clean, modern sites built for clarity, performance, and measurable growth.
-            No templates. No bloat.
-          </p>
-
-          <div class="hero-actions">
-            <a href="/contact/contact2.html" class="btn btn-primary">Schedule a Call</a>
-            <a href="/pricing/pricing2.html" class="text-link">See Pricing</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- GROWTH PACKAGE: start -->
-    <section class="pricing" id="growth-splash">
+    <section class="hero-section">
       <div class="container">
-        <div class="section-header reveal">
-          <h2>Growth — Business Growth Package</h2>
-          <p>For established businesses that want more leads.</p>
-        </div>
-
-        <div class="card reveal delay-1" style="padding: var(--space-5);">
-          <p class="muted" style="margin-top:0">
-            A lead-focused build that adds stronger messaging, SEO, analytics setup, and a conversion-ready capture path —
-            while staying clean, fast, and custom-coded.
-          </p>
-
-          <div class="hero-actions" style="margin-top: var(--space-4);">
-            <a class="btn btn-primary" href="/pricing/pricing2.html" data-track="growth_splash_cta">View Growth landing</a>
-            <a class="btn btn-secondary" href="/contact/contact2.html#growth-contact" data-track="growth_splash_contact">Start Growth consult</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="pricing">
-      <div class="container">
-
-        <div class="section-header reveal">
-          <h2>Web Design Services</h2>
-          <p>Choose the right stage for your growth.</p>
-        </div>
-
-        <div class="pricing-grid reveal delay-1">
-
-          <article class="plan card">
-            <h3>Splash + Landing</h3>
-            <p class="muted">
-              Conversion-focused entry presence built to capture attention.
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Custom-coded websites for modern businesses</p>
+            <h1>Custom websites built to convert and earn trust fast.</h1>
+            <p class="hero-lead">
+              Jacobi Web Design creates clean, premium websites for small businesses, creators, and startups
+              that need stronger branding, clearer messaging, and a sharper online first impression.
             </p>
 
-            <ul class="features">
-              <li>1 Splash page</li>
-              <li>1 Landing page</li>
-              <li>Custom layout</li>
-              <li>Mobile responsive</li>
-              <li>SEO baseline</li>
-            </ul>
-
-            <div class="plan-bottom">
-              <div class="price">
-                <div class="amount">$350</div>
-                <div class="period">starting</div>
-              </div>
-
-              <a href="/contact/contact2.html" class="btn btn-secondary">Get started</a>
+            <div class="hero-cta-row">
+              <a href="/contact/contact2.html" class="btn btn-primary">Book a Free Consult</a>
+              <a href="/pricing/pricing2.html" class="btn btn-secondary">View Packages</a>
             </div>
+
+            <div class="hero-meta">
+              <span>Custom-coded</span>
+              <span>Mobile-first</span>
+              <span>Lead-focused</span>
+            </div>
+          </div>
+
+          <aside class="hero-card reveal delay-1">
+            <span class="mini-label">What you get</span>
+            <h2>A website that feels polished, intentional, and ready to sell.</h2>
+            <p>
+              Every build is designed to help visitors understand your value quickly,
+              trust your business faster, and take action with confidence.
+            </p>
+
+            <div class="hero-feature-list">
+              <div class="feature-row">
+                <strong>01</strong>
+                <span>Premium visual presentation</span>
+              </div>
+              <div class="feature-row">
+                <strong>02</strong>
+                <span>Clear conversion-driven structure</span>
+              </div>
+              <div class="feature-row">
+                <strong>03</strong>
+                <span>Responsive layouts that work everywhere</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <strong>Clean</strong>
+            <span>Modern layouts with strong hierarchy and controlled visual design.</span>
+          </div>
+          <div class="trust-item">
+            <strong>Fast</strong>
+            <span>Lightweight builds designed to load quickly and feel smooth on mobile.</span>
+          </div>
+          <div class="trust-item">
+            <strong>Focused</strong>
+            <span>Every page is structured to move visitors toward your main call to action.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Services</p>
+          <h2>Website packages built around what your business actually needs.</h2>
+          <p>
+            Whether you need a clean launch page, a full multi-page website, or monthly support,
+            the goal is the same: help your business look more established online.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="card-icon">01</div>
+            <h3>Splash + Landing Page</h3>
+            <p>
+              A sharp, focused first impression for businesses that need a clean digital presence,
+              one strong message, and a clear CTA.
+            </p>
+            <a href="/pricing/pricing2.html" class="text-link">Explore this package</a>
           </article>
 
-          <!-- Starter -->
-          <article class="plan card">
-            <h3>Starter — Launch Package</h3>
-            <p class="muted">For small local businesses needing a professional online presence.</p>
-
-            <ul class="features">
-              <li>1 Splash page</li>
-              <li>1 Landing page</li>
-              <li>3–5 Custom pages</li>
-              <li>Mobile responsive</li>
-              <li>Mobile optimized</li>
-              <li>Basic SEO setup</li>
-              <li>Contact form</li>
-              <li>Speed optimization</li>
-              <li>2 revision rounds</li>
-            </ul>
-
-            <div class="plan-bottom">
-              <div class="price">
-                <div class="amount">$1,800</div>
-                <div class="period">starting price</div>
-              </div>
-              <a class="btn btn-secondary" href="/contact/contact2.html">Get started</a>
-            </div>
+          <article class="service-card reveal delay-1">
+            <div class="card-icon">02</div>
+            <h3>Multi-Page Website</h3>
+            <p>
+              A more complete business website with room for services, trust-building content,
+              projects, and the structure needed to grow.
+            </p>
+            <a href="/pricing/pricing2.html" class="text-link">See full pricing</a>
           </article>
 
-          <!-- Growth -->
-          <article class="plan card featured">
-            <div class="badge">Most Popular</div>
-            <h3>Growth — Business Growth Package</h3>
-            <p class="muted">For established businesses that want more leads.</p>
-
-            <ul class="features">
-              <li>1 Splash page</li>
-              <li>1 Landing page</li>
-              <li>5–8 Custom Pages</li>
-              <li>Conversion-focused layout</li>
-              <li>Branding refinement</li>
-              <li>Copy structure guidance</li>
-              <li>On-page SEO</li>
-              <li>Analytics setup</li>
-              <li>Lead capture integration</li>
-              <li>3 revision rounds</li>
-            </ul>
-
-            <div class="plan-bottom">
-              <div class="price">
-                <div class="amount">$3,500</div>
-                <div class="period">starting price</div>
-              </div>
-              <a class="btn btn-primary" href="#growth-splash" data-track="growth_card_to_splash">View details</a>
-            </div>
+          <article class="service-card reveal delay-2">
+            <div class="card-icon">03</div>
+            <h3>Monthly Hosting & Care</h3>
+            <p>
+              Ongoing hosting, updates, and support to keep your website secure, maintained,
+              and running smoothly after launch.
+            </p>
+            <a href="/contact/contact2.html" class="text-link">Ask about support</a>
           </article>
+        </div>
+      </div>
+    </section>
 
+    <section class="process-section">
+      <div class="container">
+        <div class="process-shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Process</p>
+            <h2>A clear process from first call to final launch.</h2>
+            <p>
+              The goal is to keep things simple, collaborative, and focused on building a site
+              that actually supports your business.
+            </p>
+          </div>
+
+          <div class="process-grid">
+            <article class="process-card reveal">
+              <span class="process-step">Step 1</span>
+              <h3>Discovery</h3>
+              <p>
+                We talk through your goals, audience, services, and what your website needs
+                to communicate clearly.
+              </p>
+            </article>
+
+            <article class="process-card reveal delay-1">
+              <span class="process-step">Step 2</span>
+              <h3>Design Direction</h3>
+              <p>
+                I structure the site for clarity, trust, and conversion while shaping a more
+                premium visual direction for your brand.
+              </p>
+            </article>
+
+            <article class="process-card reveal delay-2">
+              <span class="process-step">Step 3</span>
+              <h3>Build & Launch</h3>
+              <p>
+                Your site is coded, refined, optimized for mobile, and prepared for launch with
+                a clean final handoff.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-cta">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div>
+            <p class="eyebrow">Ready to start?</p>
+            <h2>Let's build a website that makes your business look more established.</h2>
+            <p>
+              Whether you need a focused landing page or a fuller site build, the next step is a simple conversation
+              about what you need and how the site should work.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a href="/contact/contact2.html" class="btn btn-primary">Book a Free Consult</a>
+            <a href="/project/projects2.html" class="btn btn-secondary">View Projects</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-col">
-          <img src="/image/Jacobiwebdesignlogo.png" class="brand-logo" alt="Jacobi Web Design">
-          <p style="margin-top:16px">Clean, modern websites built to load fast and convert.</p>
-        </div>
-
-        <div class="footer-links-group">
-          <div class="footer-col">
-            <h3 class="footer-title">Quick links</h3>
-            <a class="footer-link" href="/landing/landing2.html">Home</a>
-            <a class="footer-link" href="/pricing/pricing2.html">Pricing</a>
-            <a class="footer-link" href="/project/projects2.html">Projects</a>
-          </div>
-
-          <div class="footer-col">
-            <h3 class="footer-title">Contact</h3>
-            <a class="footer-link" href="/contact/contact2.html">jacobiwebdesign038@gmail.com</a>
-            <a class="footer-link" href="tel:15135493677">(513) 549-3677</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© <span id="year"></span> Jacobi Web Design. All rights reserved.</span>
-        <span>Custom-built | Fast | No templates</span>
-      </div>
-    </div>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Minimal tracking hook (works with future analytics; no heavy libs)
-      window.jwdbTrack = window.jwdbTrack || function(){};
-      document.addEventListener("click", function(e){
-        var el = e.target && e.target.closest ? e.target.closest("[data-track]") : null;
-        if(!el) return;
-        try { window.jwdbTrack("click", { id: el.getAttribute("data-track"), href: el.getAttribute("href") }); } catch(_e){}
-      });
-    </script>
-  </footer>
-
 </body>
 </html>
-

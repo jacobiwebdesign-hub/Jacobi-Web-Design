@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OBSIDIAN – Cart</title>
+  <link rel="stylesheet" href="/website-portfolio-3/base-fixed.css" />
+  <link rel="stylesheet" href="/website-portfolio-3/category/category-fixed.css" />
+  <link rel="stylesheet" href="/website-portfolio-3/Cart/cart-fixed.css" />
+</head>
+<body>
+<header class="site-header light">
+  <div class="container nav-wrapper">
+    <div class="logo"><a href="/website-portfolio-3/home-page/home-fixed.html" style="text-decoration:none;">OBSIDIAN</a></div>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/website-portfolio-3/controllers/controllers.html" class="main-nav__link"><span>Controllers</span></a>
+      <a href="/website-portfolio-3/console/consoles.html" class="main-nav__link"><span>Consoles</span></a>
+      <a href="/website-portfolio-3/games/games.html" class="main-nav__link"><span>Games</span></a>
+      <a href="/website-portfolio-3/headset/headsets.html" class="main-nav__link"><span>Headsets</span></a>
+    </nav>
+    <div class="nav-icons">
+      <a href="/website-portfolio-3/home-page/home-fixed.html" class="icon-button" aria-label="Go to store home">
+        <img src="/image/website-portfolio-3-image/black-search-icon.png" alt="Search" />
+      </a>
+      <a href="/website-portfolio-3/Cart/cart.html" class="icon-button cart-link is-active" aria-label="View cart">
+        <img src="/image/website-portfolio-3-image/black-cart-icon.png" alt="Cart" />
+        <span class="cart-count" data-cart-count>0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="collection-hero dark cart-hero">
+    <div class="container hero-layout cart-hero-layout">
+      <div>
+        <p class="eyebrow">Your Selection</p>
+        <h1>Cart built for a premium checkout flow.</h1>
+        <p>Review your gear, adjust quantities, and move through a storefront experience that feels clean, elevated, and high-end.</p>
+        <div class="hero-actions">
+          <a href="/website-portfolio-3/home-page/home-fixed.html" class="btn btn-light">Continue Shopping</a>
+          <a href="#cart-summary" class="btn btn-ghost">View Summary</a>
+        </div>
+      </div>
+      <div class="hero-panel cart-panel">
+        <div class="cart-stat">
+          <strong data-cart-count>0</strong>
+          <span>Items in cart</span>
+        </div>
+        <div class="cart-stat">
+          <strong data-cart-subtotal>$0</strong>
+          <span>Current subtotal</span>
+        </div>
+        <div class="cart-stat">
+          <strong>Premium</strong>
+          <span>Luxury storefront styling</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cart-section light">
+    <div class="container cart-layout">
+      <div class="cart-items-wrap">
+        <div class="section-heading cart-heading">
+          <h2>Your Cart</h2>
+          <p>Your selected OBSIDIAN products appear below. Quantities update instantly and stay saved in the browser with local storage.</p>
+        </div>
+
+        <div id="cart-items" class="cart-items"></div>
+
+        <div id="cart-empty" class="empty-cart" hidden>
+          <h3>Your cart is empty.</h3>
+          <p>Explore the premium collection and add controllers, consoles, games, or headsets.</p>
+          <a href="/website-portfolio-3/home-page/home-fixed.html" class="btn btn-light">Browse Store</a>
+        </div>
+      </div>
+
+      <aside class="summary-card dark" id="cart-summary">
+        <h2>Order Summary</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong data-cart-subtotal>$0</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Shipping</span>
+          <strong data-cart-shipping>Free</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Estimated tax</span>
+          <strong data-cart-tax>$0</strong>
+        </div>
+
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <strong data-cart-total>$0</strong>
+        </div>
+
+        <button type="button" class="btn btn-light checkout-btn">Secure Checkout</button>
+        <button type="button" class="btn btn-ghost clear-btn" id="clear-cart">Clear Cart</button>
+
+        <p class="summary-note">This is a front-end demo cart. It is wired for browsing, saving, and updating items, but not for live payment processing yet.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer dark">
+  <div class="container footer-content">
+    <div>OBSIDIAN</div>
+    <nav>
+      <a href="/website-portfolio-3/home-page/home-fixed.html">Store</a>
+        <a href="/website-portfolio-3/controllers/controllers.html">Controllers</a>
+        <a href="/website-portfolio-3/console/consoles.html">Consoles</a>
+        <a href="/website-portfolio-3/games/games.html">Games</a>
+        <a href="/website-portfolio-3/headset/headsets.html">Headsets</a>
+    </nav>
+    <p>© 2029 Obsidian. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/website-portfolio-3/Cart/cart.js"></script>
+</body>
+</html>
+

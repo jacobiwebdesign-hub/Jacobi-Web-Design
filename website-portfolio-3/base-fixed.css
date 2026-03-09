@@ -3,42 +3,47 @@
 ================================ */
 
 :root {
-  /* Colors */
-  --color-bg-dark: #0c0f16;
-  --color-bg-overlay: rgba(0, 0, 0, 0.6);
+  --color-bg-dark: #07090d;
+  --color-bg-dark-soft: #0d1118;
+  --color-surface-dark: rgba(16, 21, 31, 0.82);
+  --color-surface-dark-2: rgba(19, 24, 35, 0.92);
+  --color-surface-light: #f3f4f7;
+  --color-border-soft: rgba(255, 255, 255, 0.09);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
   --color-text-primary: #ffffff;
-  --color-text-secondary: #c7c7c7;
-  --color-button-light: #e5e5e5;
-  --color-button-text: #111111;
+  --color-text-secondary: #b7bfcc;
+  --color-text-dark: #111318;
+  --color-button-light: #f4f6f8;
+  --color-button-text: #101217;
+  --color-button-dark: rgba(255, 255, 255, 0.04);
+  --color-button-dark-text: #f7f8fb;
+  --color-accent: #d9dde6;
 
-  /* Typography */
-  --font-family-base: "Inter", system-ui, -apple-system, sans-serif;
+  --font-family-base: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;
-  --font-size-lg: 1.25rem;
-  --font-size-xl: clamp(1.75rem, 5.5vw, 2.5rem);
-  --font-size-xxl: clamp(2.25rem, 7vw, 3.5rem);
+  --font-size-lg: 1.125rem;
+  --font-size-xl: clamp(1.85rem, 4vw, 2.8rem);
+  --font-size-xxl: clamp(2.7rem, 7vw, 5.5rem);
 
-  /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 2rem;
   --space-lg: 4rem;
   --space-xl: 6rem;
+  --site-header-height: 84px;
 
-  /* Layout */
-  --container-width: 1200px;
+  --container-width: 1240px;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.28);
+  --shadow-card: 0 20px 50px rgba(0, 0, 0, 0.24);
 }
 
-/* ================================
-   RESET + NO-HORIZONTAL-SCROLL GUARANTEES
-================================ */
-
-*,
-*::before,
-*::after { box-sizing: border-box; }
+* , *::before, *::after { box-sizing: border-box; }
 
 html, body {
   margin: 0;
@@ -47,8 +52,10 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Prevent 100vw pitfalls on mobile scrollbars */
 body { max-width: 100%; }
+body {
+  padding-top: var(--site-header-height);
+}
 
 img, video, canvas, svg {
   max-width: 100%;
@@ -58,20 +65,40 @@ img, video, canvas, svg {
 
 body {
   font-family: var(--font-family-base);
-  background: var(--color-bg-dark);
+  background:
+    radial-gradient(circle at top, rgba(96, 114, 145, 0.14), transparent 32%),
+    linear-gradient(180deg, #080a0e, #050609 70%);
   color: var(--color-text-primary);
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Prevent long text forcing overflow */
 p, a, li, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
-/* ================================
-   GLOBAL UTILITIES
-================================ */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 .container {
   width: 100%;
@@ -80,33 +107,59 @@ p, a, li, h1, h2, h3, h4, h5, h6 {
   padding-inline: 1.25rem;
 }
 
-/* ================================
-   BUTTON COMPONENT
-================================ */
-
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.25rem;
-  min-height: 44px;
-  border-radius: 8px;
+  gap: 0.55rem;
+  min-height: 48px;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 500;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  transition: transform 0.22s ease, opacity 0.22s ease, background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 .btn-light {
-  background: var(--color-button-light);
+  background: linear-gradient(180deg, #ffffff, #e8edf4);
   color: var(--color-button-text);
+  box-shadow: 0 10px 24px rgba(255, 255, 255, 0.12);
 }
 
 .btn-light:hover {
-  transform: translateY(-2px);
-  opacity: 0.92;
+  opacity: 0.98;
+  box-shadow: 0 14px 28px rgba(255, 255, 255, 0.16);
+}
+
+.btn-ghost {
+  background: var(--color-button-dark);
+  color: var(--color-button-dark-text);
+  border-color: var(--color-border-soft);
+  backdrop-filter: blur(8px);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-border-strong);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 @media (max-width: 768px) {
   .container { padding-inline: 1rem; }
   .btn { width: 100%; }
+}
+
+/* Shared sticky navbar for all OBSIDIAN pages */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  width: 100%;
 }

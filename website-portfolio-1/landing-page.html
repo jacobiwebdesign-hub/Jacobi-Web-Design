@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Beyond the Threshold</title>
+
+<link rel="stylesheet" href="./landing-page.css">
+
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="overlay-noise"></div>
+
+<div class="smoke-system" aria-hidden="true">
+  <div class="smoke-layer smoke-back">
+    <span class="smoke-plume plume-1"></span>
+    <span class="smoke-plume plume-2"></span>
+    <span class="smoke-plume plume-3"></span>
+  </div>
+
+  <div class="smoke-layer smoke-mid">
+    <span class="smoke-plume plume-4"></span>
+    <span class="smoke-plume plume-5"></span>
+    <span class="smoke-plume plume-6"></span>
+    <span class="smoke-plume plume-7"></span>
+  </div>
+
+  <div class="smoke-layer smoke-front">
+    <span class="smoke-plume plume-8"></span>
+    <span class="smoke-plume plume-9"></span>
+    <span class="smoke-plume plume-10"></span>
+  </div>
+
+  <div class="smoke-vignette"></div>
+</div>
+
+<header class="header">
+
+<div class="logo">
+BEYOND<br><span>THE THRESHOLD</span>
+</div>
+
+<nav>
+<a href="#">Stories</a>
+<a href="#">Series</a>
+<a href="#">Most Read</a>
+<a href="#">New Arrivals</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-left">
+
+<div class="label">Featured Story</div>
+
+<h1>Something's in the Pines</h1>
+
+<p>What was supposed to be a normal camping trip turned into the worst night of my life when I saw something moving between the trees—something too tall, too old, and too wrong to be human. I still don’t know what was out there in the woods, but I know it saw me too.</p>
+
+<button>Read Now</button>
+
+</div>
+
+<div class="hero-right">
+  <img src="/image/website-portfolio-1-images/fog-forest-autumn.jpg">
+</div>
+
+</section>
+
+
+
+<section class="main-grid">
+
+<div class="latest">
+
+<h2>Latest Tales</h2>
+
+<div class="story-card" style="--story-bg: url('/image/website-portfolio-1-images/gateway-heaven.jpg')">
+  <h3>Don’t Answer the Voice in the Basement</h3>
+</div>
+
+<div class="story-card" style="--story-bg: url('/image/website-portfolio-1-images/fairytale-scene-coming-out-book.jpg')">
+  <h3>The Book of Final Stars</h3>
+</div>
+
+<div class="story-card" style="--story-bg: url('/image/website-portfolio-1-images/dark-fantasy-scene.jpg')">
+  <h3>I Saw Myself at the End of the Street</h3>
+</div>
+
+<button class="section-btn">View All Stories</button>
+
+</div>
+
+
+
+<div class="series">
+
+<h2>Ongoing Stories</h2>
+
+<div class="series-slider" data-series-slider>
+  <button class="series-btn series-prev" type="button" aria-label="Previous series story">&#10094;</button>
+  <div class="series-track">
+
+  <div class="series-card" style="--story-bg: url('/image/website-portfolio-1-images/black-pine-county.png')">
+    <h3>Black Pine County</h3>
+  </div>
+
+  <div class="series-card" style="--story-bg: url('/image/website-portfolio-1-images/hollow-archives.png')">
+    <h3>The Hollow Archives</h3>
+  </div>
+
+  <div class="series-card" style="--story-bg: url('/image/website-portfolio-1-images/marrow-lake.png')">
+    <h3>Signal From Marrow Lake</h3>
+  </div>
+
+  </div>
+  <button class="series-btn series-next" type="button" aria-label="Next series story">&#10095;</button>
+  <div class="series-dots" aria-label="Series story navigation">
+    <button class="series-dot is-active" type="button" aria-label="Go to series story 1"></button>
+    <button class="series-dot" type="button" aria-label="Go to series story 2"></button>
+    <button class="series-dot" type="button" aria-label="Go to series story 3"></button>
+  </div>
+
+</div>
+
+<button class="section-btn">See All Series</button>
+
+</div>
+
+
+
+<div class="mostread">
+
+<h2>Most Read</h2>
+
+<ul>
+  <li>The Thing Beyond the Tree Line</li>
+  <li>Don’t Answer the Voice in the Basement</li>
+  <li>The Last Page Was Written Before I Was Born</li>
+  <li>Every Morning It Was Standing Closer</li>
+  <li>We Heard It Moving Outside the Tent</li>
+</ul>
+
+<button class="section-btn">View All Stories</button>
+
+</div>
+
+</section>
+
+
+
+<section class="archive-feature">
+
+<h2>From The Archive</h2>
+
+<div class="archive-grid">
+
+<div class="archive-big" style="--story-bg: url('/image/website-portfolio-1-images/dark-fantasy-scene.jpg')">
+  <h3>When the Archive Opened at Midnight</h3>
+</div>
+
+<div class="archive-side">
+
+<div class="archive-card" style="--story-bg: url('/image/website-portfolio-1-images/fog-forest-autumn.jpg')">
+  <h3>The Hollow Ledger</h3>
+</div>
+<div class="archive-card" style="--story-bg: url('/image/website-portfolio-1-images/gateway-heaven.jpg')">
+  <h3>The House at the End of the Road</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="submit">
+
+<h2>Have a Creepy Story?</h2>
+
+<p>Submit your story to the archive.</p>
+
+<button>Submit Your Story</button>
+
+</section>
+
+
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h3>About</h3>
+<p>Placeholder text</p>
+</div>
+
+<div>
+<h3>Explore</h3>
+<p>Stories</p>
+<p>Series</p>
+</div>
+
+<div>
+<h3>Follow</h3>
+<p>Instagram</p>
+<p>Youtube</p>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026
+</div>
+
+</footer>
+
+
+<script src="./landing-page.js"></script>
+
+</body>
+</html>
